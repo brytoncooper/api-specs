@@ -1,0 +1,21 @@
+name: GitHub API Interaction
+on:
+  push:
+    branches:
+      - main  # Adjust if your default branch has a different name
+
+jobs:
+  call_github_api:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Fetch Repository Details
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          curl -H "Authorization: Bearer $API_TOKEN" \
+               "https://api.github.com/repos/brytoncooper/commandBackendv6"
+x
