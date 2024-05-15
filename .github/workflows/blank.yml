@@ -15,7 +15,7 @@ jobs:
 
       - name: Fetch Repository Details
         env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+          API_TOKEN: ${{ secrets.api_token2 }}
         run: |
           curl -H "Authorization: Bearer $API_TOKEN" \
                "https://api.github.com/repos/brytoncooper/commandBackendv6"
