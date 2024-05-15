@@ -30,6 +30,8 @@ paths:
           schema:
             type: string
           description: The name of the repository.
+      security:
+        - BearerAuth: []
       responses:
         '200':
           description: Detailed information about the repository.
@@ -63,7 +65,7 @@ paths:
                         type: string
                       url:
                         type: string
-                      received_events_url:
+                        received_events_url:
                         type: string
                       type:
                         type: string
