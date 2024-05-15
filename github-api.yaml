@@ -4,16 +4,14 @@ info:
   description: Access specific repository details on GitHub using a secure method to handle authentication.
   version: 1.0.0
 servers:
-  - URL: https://api.github.com
+  - url: https://api.github.com
     description: GitHub API server
-
 components:
   securitySchemes:
     BearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-
 paths:
   /repos/{owner}/{repo}:
     get:
@@ -149,6 +147,5 @@ paths:
                     type: string
                   deployments_url:
                     type: string
-      security:
-        - BearerAuth: []
-
+security:
+  - BearerAuth: []
