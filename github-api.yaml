@@ -65,7 +65,7 @@ paths:
                         type: string
                       url:
                         type: string
-                        received_events_url:
+                      received_events_url:
                         type: string
                       type:
                         type: string
@@ -147,7 +147,7 @@ paths:
                     type: string
                   releases_url:
                     type: string
-                  deployments_url:
-                    type: string
+                    deployments_url:
+                      type: string
 security:
   - BearerAuth: []
