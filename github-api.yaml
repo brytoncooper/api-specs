@@ -1,0 +1,154 @@
+openapi: 3.0.0
+info:
+  title: GitHub Repository API
+  description: Access specific repository details on GitHub using a secure method to handle authentication.
+  version: 1.0.0
+servers:
+  - url: https://api.github.com
+    description: GitHub API server
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+paths:
+  /repos/{owner}/{repo}:
+    get:
+      operationId: getRepositoryDetails
+      summary: Get details of a specified repository.
+      parameters:
+        - in: path
+          name: owner
+          required: true
+          schema:
+            type: string
+          description: The GitHub user or organization name that owns the repository.
+        - in: path
+          name: repo
+          required: true
+          schema:
+            type: string
+          description: The name of the repository.
+      responses:
+        '200':
+          description: Detailed information about the repository.
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  node_id:
+                    type: string
+                  name:
+                    type: string
+                  full_name:
+                    type: string
+                  private:
+                    type: boolean
+                  owner:
+                    type: object
+                    properties:
+                      login:
+                        type: string
+                      id:
+                        type: integer
+                      node_id:
+                        type: string
+                      avatar_url:
+                        type: string
+                      gravatar_id:
+                        type: string
+                      url:
+                        type: string
+                      received_events_url:
+                        type: string
+                      type:
+                        type: string
+                  html_url:
+                    type: string
+                  description:
+                    type: string
+                  fork:
+                    type: boolean
+                  url:
+                    type: string
+                  forks_url:
+                    type: string
+                  keys_url:
+                    type: string
+                  collaborators_url:
+                    type: string
+                  teams_url:
+                    type: string
+                  hooks_url:
+                    type: string
+                  issue_events_url:
+                    type: string
+                  events_url:
+                    type: string
+                  assignees_url:
+                    type: string
+                  branches_url:
+                    type: string
+                  tags_url:
+                    type: string
+                  blobs_url:
+                    type: string
+                  git_tags_url:
+                    type: string
+                  git_refs_url:
+                    type: string
+                  trees_url:
+                    type: string
+                  statuses_url:
+                    type: string
+                  languages_url:
+                    type: string
+                  stargazers_url:
+                    type: string
+                  contributors_url:
+                    type: string
+                  subscribers_url:
+                    type: string
+                  subscription_url:
+                    type: string
+                  commits_url:
+                    type: string
+                  git_commits_url:
+                    type: string
+                  comments_url:
+                    type: string
+                  issue_comment_url:
+                    type: string
+                  contents_url:
+                    type: string
+                  compare_url:
+                    type: string
+                  merges_url:
+                    type: string
+                  archive_url:
+                    type: string
+                  downloads_url:
+                    type: string
+                  issues_url:
+                    type: string
+                  pulls_url:
+                    type: string
+                  milestones_url:
+                    type: string
+                  notifications_url:
+                    type: string
+                  labels_url:
+                    type: string
+                  releases_url:
+                    type: string
+                  deployments_url:
+                    type: string
+      security:
+        - BearerAuth: []
+
