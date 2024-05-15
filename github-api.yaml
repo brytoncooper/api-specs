@@ -4,7 +4,7 @@ info:
   description: Access specific repository details on GitHub using a secure method to handle authentication.
   version: 1.0.0
 servers:
-  - url: https://api.github.com
+  - URL: https://api.github.com
     description: GitHub API server
 
 components:
