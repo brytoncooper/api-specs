@@ -17,6 +17,6 @@ jobs:
         env:
           API_TOKEN: ${{ secrets.api_token2 }}
         run: |
+          echo "API Token: $API_TOKEN"  # Print the token for testing (remove after testing)
           curl -H "Authorization: Bearer $API_TOKEN" \
                "https://api.github.com/repos/brytoncooper/commandBackendv6"
-
