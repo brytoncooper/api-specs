@@ -149,3 +149,4 @@ paths:
                     type: string
 security:
   - BearerAuth: []
+
